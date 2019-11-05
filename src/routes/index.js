@@ -27,9 +27,24 @@ router.post('/addArticle', (req, res) => {
 
   })
 
+<<<<<<< HEAD
 
 router.get('/ViewArticle',(req,res)=>{
     res.render('ViewArticle')
+=======
+router.get('/ViewArticle/:article_id',(req,res)=>{
+    let articleId = req.params.article_id //this needs to be changed TODO
+    queries.getbody(articleId,(err,data)=>{
+        if(err){
+            // error.server(err, req, res, {}); return;
+            console.log("err:"+ err);return;
+        }
+        let articleData=data.rows[0];
+        console.log(articleData);
+        
+        res.render('viewArticle',articleData);
+    });
+>>>>>>> 878aeb612d1c7aed966be8ca08e44990048068b0
 
 })
 
