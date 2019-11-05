@@ -1,6 +1,6 @@
 const databaseConnection = require("../database/db_connection.js");
 
-const deletearticle = (articale_id) => {
+const deletearticle = (articale_id,cb) => {
   databaseConnection.query(`DELETE FROM articles WHERE article_id=$1)`,
     [articale_id],
     (err, res) => {
