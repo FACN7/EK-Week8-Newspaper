@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const router = express.Router();
+const queries=require("../queries/index");
 
 // const fruit = require('./fruit');
 const error = require('./error');
@@ -12,6 +13,16 @@ router.use(express.static(path.join(__dirname, "..",'..', 'public'), { maxAge: '
 router.get('/',(req,res)=>{
     res.render('home',{karem:"karem world"})
 })
+router.get('/addArticle', (req, res) => {
+    res.render('addArticle')
+
+  })
+
+router.get('/ViewArticle',(req,res)=>{
+    res.render('ViewArticle')
+
+})
+
 router.use(error.client);
 router.use(error.server);
 
