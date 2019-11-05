@@ -1,0 +1,39 @@
+{
+  "name": "EK-Week8-Newspaper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACN7/EK-Week8-Newspaper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACN7/EK-Week8-Newspaper/issues"
+  },
+  "homepage": "https://github.com/FACN7/EK-Week8-Newspaper#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie": "^0.4.0",
+    "cookie-parser": "^1.4.4",
+    "env2": "^2.2.2",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.5.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.12.1",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
