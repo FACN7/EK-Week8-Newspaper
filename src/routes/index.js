@@ -8,7 +8,7 @@ const error = require('./error');
 
 // router.get('/fruit', fruit.get);
 // router.post('/fruit', fruit.post);
-// router.use(express.static(path.join(__dirname, "..",'..', 'public'), { maxAge: '30d' }));
+router.use(express.static(path.join(__dirname, "..",'..', 'public'), { maxAge: '30d' }));
 router.get('/',(req,res)=>{
     res.render('home',{karem:"karem world"})
 })
