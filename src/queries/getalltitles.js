@@ -1,7 +1,7 @@
 const databaseConnection = require("../database/db_connection.js");
 
-const gettitles = () => {
-  databaseConnection.query(`SELECT title,article_id FROM articles)`,
+const gettitles = (cb) => {
+  databaseConnection.query(`SELECT title,article_id FROM articles`,
     (err, res) => {
       if (err) {
         return cb(err);

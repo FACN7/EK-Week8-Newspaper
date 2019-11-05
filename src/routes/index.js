@@ -3,20 +3,30 @@ const express = require('express');
 const path = require('path');
 const router = express.Router();
 const queries=require("../queries/index");
-
-// const fruit = require('./fruit');
 const error = require('./error');
 
-// router.get('/fruit', fruit.get);
-// router.post('/fruit', fruit.post);
 router.use(express.static(path.join(__dirname, "..",'..', 'public'), { maxAge: '30d' }));
-router.get('/',(req,res)=>{
-    res.render('home',{karem:"karem world"})
+router.get('/',(req,response)=>{
+    queries.getalltitles(( err, res)=>{
+        if(err) {throw err;}
+        response.render('home',{titles:res.rows});
+    })
 })
-router.get('/addArticle', (req, res) => {
-    res.render('addArticle')
+router.post('/addArticle', (req, res) => {
+    const user_id=1;
+    const pic_url=null;
+    queries.addarticle(user_id,req.body.Title,req.body.Article,pic_url,(err,response)=>{
+        if(err) {throw err;}
+        res.redirect('/')
+    })
 
   })
+  router.get('/addArticle', (req, res) => {
+    // console.log(req.body);
+    res.render('addArticle');
+
+  })
+
 
 router.get('/ViewArticle',(req,res)=>{
     res.render('ViewArticle')
