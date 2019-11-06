@@ -3,9 +3,10 @@
 ## A group project for Founders and Coders, week 8
 
 
-![heroku](https://newspaper-ek-week8.herokuapp.com/)
+[heroku](https://newspaper-ek-week8.herokuapp.com/)
 ### `how to install`
 
+After creating your own database,
 You can clone the repo by typing the command
 
 ```console
@@ -14,6 +15,9 @@ You can clone the repo by typing the command
 > npm i
 > npm start
 ```
+
+###DONT forget to add DB_URL to config.env
+
 
 ![](https://media.giphy.com/media/lYZjoIy0UOEJa/giphy.gif)
 
@@ -46,7 +50,5 @@ Stretch goals:
 
 * Express
 * Rendering
-
-![](https://media.giphy.com/media/3o7TKVUn7iM8FMEU24/giphy.gif)
 
 
