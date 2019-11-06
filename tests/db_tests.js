@@ -77,11 +77,9 @@ tape("adding to article", t => {
         pic_url: null
     };
     queries.addarticle(1,"Testing is boring","we are died in this course",null,(err,res)=>{
-        if(err) console.log(err);
-        else{
+      t.error(err);
             t.deepEqual(res.rows[0].article_id,expected.article_id,"should be 6")
             t.end();
-        }
     })
 });
 });
@@ -98,8 +96,7 @@ tape("delete from article", t => {
           pic_url: null
       };
       queries.addarticle(1,"Testing is boring","we are died in this course",null,(err,res)=>{
-          if(err) console.log(err);
-          else{
+        t.error(err);
               t.deepEqual(res.rows[0].article_id,expected.article_id,"should be 6")
               queries.deletearticle(6,(err,res)=>{
                 if(err) console.log(err);
@@ -108,7 +105,7 @@ tape("delete from article", t => {
                       t.end();
                 }
               })
-          }
+          
       })
   });
   });
@@ -120,12 +117,10 @@ tape("delete from article", t => {
 
         // expected.map(e=>{return })
         queries.getbody(1,(err,res)=>{
-            if(err) console.log(err);
-            else{
+          t.error(err);
                delete res.rows[0].date
                 t.deepEqual(res.rows[0],expected[0])
                 t.end();
-            }
             
         });
     })

@@ -36,9 +36,10 @@ router.get('/ViewArticle/:article_id',(req,res)=>{
             console.log("err:"+ err);return;
         }
         let articleData=data.rows[0];
-        console.log(articleData);
-        
+        // console.log(articleData);
+
         res.render('viewArticle',articleData);
+        // res.
     });
 
 })
