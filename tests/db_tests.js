@@ -49,48 +49,88 @@ tape("demo test", t => {
   t.end();
 });
 tape("test all titles", t => {
-    runDbBuild();
-    const expected=articles.map(e=>{return {title:e.title,article_id:e.article_id}});
-  queries.getalltitles((err,res)=>{
-        if(err) console.log(err);
-        else{
-        t.deepEqual(res.rows,expected)
-        t.end();
-        }
+    runDbBuild(()=>{
 
-    });
-  
+        const expected=articles.map(e=>{return {title:e.title,article_id:e.article_id}});
+        queries.getalltitles((err,res)=>{
+            if(err) console.log(err);
+            else{
+                t.deepEqual(res.rows,expected)
+                t.end();
+            }
+            
+        });
+    })
+        
   });
 
-  const expected={article_id:6,
-    user_id: 1,
-    title: "Testing is boring",
-    description:
-      "we are died in this course",
-    pic_url: null
-  };
-tape("adding to article", t => {
-  runDbBuild();
-//   const article_id=6;
 
+tape("adding to article", t => {
+  runDbBuild(()=>{
+
+      //   const article_id=6;
+      const expected={article_id:6,
+        user_id: 1,
+        title: "Testing is boring",
+        description:
+        "we are died in this course",
+        pic_url: null
+    };
     queries.addarticle(1,"Testing is boring","we are died in this course",null,(err,res)=>{
         if(err) console.log(err);
         else{
-        t.deepEqual(res.rows[0].article_id,expected.article_id,"should be 6")
-        t.end();
+            t.deepEqual(res.rows[0].article_id,expected.article_id,"should be 6")
+            t.end();
         }
     })
 });
-// tape("delete article", t => {
-    
-//     queries.getbody(6,(err,res)=>{
-//         if(err)console.log(err)
-//         else{
-//             t.deepEqual(res.rows, expected,"should be equal");
-//             t.end();
-//         }
-//     })
-// });
+});
+
+tape("delete from article", t => {
+    runDbBuild(()=>{
+  
+        //   const article_id=6;
+        const expected={article_id:6,
+          user_id: 1,
+          title: "Testing is boring",
+          description:
+          "we are died in this course",
+          pic_url: null
+      };
+      queries.addarticle(1,"Testing is boring","we are died in this course",null,(err,res)=>{
+          if(err) console.log(err);
+          else{
+              t.deepEqual(res.rows[0].article_id,expected.article_id,"should be 6")
+              queries.deletearticle(6,(err,res)=>{
+                if(err) console.log(err);
+                else{
+                    t.deepEqual(res.rows[0].article_id,expected.article_id,"should be 6")
+                      t.end();
+                }
+              })
+          }
+      })
+  });
+  });
+
+  tape("get body", t => {
+    const expected=articles.filter(e=>e.article_id===1);
+
+    runDbBuild(()=>{
+
+        // expected.map(e=>{return })
+        queries.getbody(1,(err,res)=>{
+            if(err) console.log(err);
+            else{
+               delete res.rows[0].date
+                t.deepEqual(res.rows[0],expected[0])
+                t.end();
+            }
+            
+        });
+    })
+        
+  });
 
 
 
