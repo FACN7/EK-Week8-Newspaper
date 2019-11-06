@@ -16,7 +16,7 @@ You can clone the repo by typing the command
 > npm start
 ```
 
-###DONT forget to add DB_URL to config.env
+### DONT forget to add DB_URL to config.env
 
 
 ![](https://media.giphy.com/media/lYZjoIy0UOEJa/giphy.gif)
