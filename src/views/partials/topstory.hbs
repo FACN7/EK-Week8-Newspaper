@@ -1,0 +1,12 @@
+<div></div>
+    <div class="article-item">
+        {{#if (getfirstwithpicpic titles)}}
+        <div><img src="{{getfirstwithpicpic titles}}" alt="{{getfirstwithpictitle titles}}"></div>
+        {{/if}}
+        <div><a href="/ViewArticle/{{getfirstwithpicid titles}}">
+                <h2>{{getfirstwithpictitle titles}}</h2>
+            </a>
+        </div>
+    </div>
+</div>
+<hr>
