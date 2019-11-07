@@ -88,6 +88,9 @@ body {
 .article-item a{
   color: black;
 }
+.article-item img {
+  max-width: 90%;
+}
 
 /***********************************************
 $navbar
@@ -185,8 +188,8 @@ view article
   width: 100%;
 }
 
-.view-article-img img {
-  margin-left: 10%;
+.view-article img {
+  align-self: center;
 }
 
 .view-article-text {
