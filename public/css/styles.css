@@ -20,6 +20,7 @@
   margin: 0;
   padding: 0;
 } */
+
 /* 
 body {
   color: var(--color-text-main);
@@ -29,6 +30,7 @@ body {
 ul {
   list-style-type: none;
 }
+
 /* 
 a {
   text-decoration: none;
@@ -68,6 +70,10 @@ body {
   background: #333;
 }
 
+.big-ass-container {
+  background: rgb(238, 234, 234);
+}
+
 .main {
   flex: 1;
 }
@@ -75,9 +81,12 @@ body {
 .article-item {
   
   width: 100%;
-  border-radius: 15px;
-  /* background: rgb(238, 234, 234); */
+  /* border-radius: 15px; */
+  background: rgb(238, 234, 234);
   padding: 10px 0px 0px 10px;
+}
+.article-item a{
+  color: black;
 }
 
 /***********************************************
