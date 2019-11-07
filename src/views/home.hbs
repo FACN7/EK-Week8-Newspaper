@@ -1,13 +1,19 @@
-<div >
+<div class="big-ass-container">
   {{> topstory}}
-  <div>
+  {{!-- <div> --}}
     {{#each titles}}
-    <div><div class="article-item">
-      <div><a href="/ViewArticle/{{this.article_id}}"><h2>#{{this.title}}</h2></a>
+    <div>
+      <div class="article-item">
+        <div><a href="/ViewArticle/{{this.article_id}}">
+            <h2>#{{this.title}}</h2>
+          </a>
+        </div>
+        {{#if this.pic_url}}
+        <div><img src="{{this.pic_url}}" alt="{{this.title}} post pic"></div>
+        {{/if}}
       </div>
-    {{#if this.pic_url}}
-    <div><img src="{{this.pic_url}}" alt="{{this.title}}"></div>
-    {{/if}}</div></div><hr>
-  {{/each}}
-  </div>
-  </div>
+    </div>
+    <br/>
+    {{/each}}
+  {{!-- </div> --}}
+</div>

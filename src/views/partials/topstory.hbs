@@ -1,7 +1,7 @@
-<div></div>
+<div>
     <div class="article-item">
         {{#if (getfirstwithpicpic titles)}}
-        <div><img src="{{getfirstwithpicpic titles}}" alt="{{getfirstwithpictitle titles}}"></div>
+        <div><img src="{{getfirstwithpicpic titles}}" alt="{{getfirstwithpictitle titles}} TOP post pic"></div>
         {{/if}}
         <div><a href="/ViewArticle/{{getfirstwithpicid titles}}">
                 <h2>{{getfirstwithpictitle titles}}</h2>
@@ -9,4 +9,3 @@
         </div>
     </div>
 </div>
-<hr>
