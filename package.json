@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node tests/db_tests.js |tap-spec",
+    "test": "node tests/router_test.js |tap-spec",
     "dev": "nodemon src/server.js",
     "start": "node src/server.js"
   },
@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "nodemon": "^1.19.4",
+    "supertest": "^4.0.2",
     "tape": "^4.11.0"
   }
 }
