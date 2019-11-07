@@ -1,3 +1,12 @@
-<h1>{{this.title}}</h1>
+<div class="view-article">
 
-<p>{{this.description}}</p>
+    <h1>{{this.title}}</h1>
+    {{#if this.pic_url}}
+    <div class="view-article-img"><img src="{{this.pic_url}}" alt="{{this.title}}">
+    </div>
+    {{/if}}
+    <div class="view-article-text">
+
+    <p>{{this.description}}</p>
+    </div>
+</div>
